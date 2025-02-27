@@ -44,5 +44,7 @@ int main()
         }
 
     }
+    else
+    cout<<"Wrong number entered"<<endl;
     return 0;
 }

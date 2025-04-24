@@ -1,19 +1,20 @@
 class ArchiveItem:
-    ##constructor
-    def __init__(self, uid:str, title:str, year:int):
+    def __init__(self, uid: str, title: str, year: int):
         self.uid = uid
         self.title = title
         self.year = year
 
-    def __str__(self)->str:
+    def __str__(self) -> str:
         return f"UID: {self.uid}, Title: {self.title}, Year: {self.year}"
 
-    def __eq__(self,other)->bool:
-        if not instance(other,ArchiveItem):
-            return self.uid == other.uid
+    def __eq__(self, other) -> bool:
+        if not isinstance(other, ArchiveItem):
+            return NotImplemented
+        return self.uid == other.uid
 
-    def is_recent(self,n:int)->bool:
-        return self.year >= 2025-n
+    def is_recent(self, n: int) -> bool:
+        return self.year >= 2025 - n
+
 
 ######################2##############################
 class Book(ArchiveItem):
